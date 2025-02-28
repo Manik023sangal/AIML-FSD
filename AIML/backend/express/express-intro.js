@@ -9,11 +9,11 @@ app.get('/', (req, res) => {
 
 //app.use(express.json());
 
-// app.post('/users', (req, res) => {
-       //const data = req.body;
-       //res.send(`My name is ${data.name}`)
-//     res.send("Welcome to Express")
-// });
+app.post('/users', (req, res) => {
+       const data = req.body;
+       res.send(`My name is ${data.name}`)
+    res.send("Welcome to Express")
+});
 
 app.get('/api/:name/:rollno', (req, res) => {
     try {
