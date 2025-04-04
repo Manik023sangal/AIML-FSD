@@ -14,9 +14,22 @@ const adi = (req, res, next) => {
     next();
 }
 
-app.use(adi)//application middleware
+// app.use(adi)//application middleware
 
-
+const nam = (req, res, next) => {
+    const name = req.query.name
+    if(!name){
+        res.send("Enter your name")
+    }
+    if(name.length <= 2){
+        res.send("invalid name")
+    }
+    if(name == "Manik"){
+        res.send("Hi, Manik")
+    }
+    next();
+}
+app.use(nam)
 
 app.get("/", (req, res) => {
     res.send("This is my home page")
